@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Layout from '../../components/Layout';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Card from './Blog Components/Card';
 
 const AddBlog = () => {
   const [data, setData] = useState({
@@ -23,6 +24,10 @@ const AddBlog = () => {
   console.log(data)
 
 
+
+ 
+
+
   const nav= useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,9 +37,6 @@ const AddBlog = () => {
           "Content-Type": "multipart/form-data",
           "Authorization" : localStorage.getItem('token')
           }
-
-
-
     })
     
     if(response.status===201){
@@ -44,17 +46,24 @@ const AddBlog = () => {
     }
     
 
-    // try {
-    //   const response = await axios.post("https://react30.onrender.com/api/user/blog", formData, {
-    //     headers: {
-    //       'Content-Type': 'multipart/form-data'
-    //     }
-    //   });
-    //   console.log("Submission form triggered", response);
-    // } catch (error) {
-    //   console.error("Error submitting form", error);
-    // }
+   
   };
+
+
+  // const navi =useNavigate()
+  // const[blogData,setBlogData]=useState([])
+  // const getBlog= async()=>{
+  //   const response=await axios.get(' "https://react30.onrender.com/api/user/blog"')
+  //   console.log(blogData)
+  //   if (response.status===201){
+  //    setBlogData(response.data.data)
+  //   }
+  // }
+  // useEffect(()=>{
+  //   getBlog();
+
+  // },[])
+
 
   return (
     <Layout>
@@ -126,6 +135,15 @@ const AddBlog = () => {
                 </a>
               </div>
             </div>
+
+            {/* {blogData.map((a)=>{
+              return(
+                <Link to='/description'>
+                  <Card blogData={a}/>
+                </Link>
+              )
+            })} */}
+
           </div>
         </div>
       </div>
