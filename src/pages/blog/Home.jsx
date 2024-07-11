@@ -23,16 +23,18 @@ const Home = () => {
   console.log(data);
   return (
     <Layout>
+       
       <div className="flex justify-center items-center flex-wrap space-x-6 mt-10 space-y-6">
         
         {data.map((a) => {
           return (
-            <Link to={`/home/${a._id}`}>
+            <Link to={`/description`}>
               <Card data={a} />
             </Link>
           );
         })}
       </div>
+    
     </Layout>
   );
 };
