@@ -23,8 +23,9 @@ const Login = () => {
 		console.log("Submission Form Tiggered!!")
 
 		const response= await axios.post("https://react30.onrender.com/api/user/login",data)
-		
+
 		if(response.status===200){
+			localStorage.setItem('token',response.data.token)
 			nav('/')
 
 		}else{
