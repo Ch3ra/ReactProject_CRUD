@@ -7,32 +7,32 @@ import axios from "axios";
 
 const Home = () => {
   // Read gardaii xum la mero vaii
-  // const [data, setData] = useState([]);
-  // const getData = async () => {
-  //   const response = await axios.get(
-  //     "https://react30.onrender.com/api/user/blog"
-  //   );
-  //   console.log(response);
-  //   if (response.status === 200) {
-  //     setData(response.data.data);
-  //   }
-  // };
-  // useEffect(() => {
-  //   getData();
-  // }, []);
-  // console.log(data);
+  const [data, setData] = useState([]);
+  const getData = async () => {
+    const response = await axios.get(
+      "https://react30.onrender.com/api/user/blog"
+    );
+    console.log(response);
+    if (response.status === 200) {
+      setData(response.data.data);
+    }
+  };
+  useEffect(() => {
+    getData();
+  }, []);
+  
   return (
     <Layout>
        
       <div className="flex justify-center items-center flex-wrap space-x-6 mt-10 space-y-6">
         
-        {/* {data.map((a) => {
+         {data.map((a) => {
           return (
-            <Link to={`/description`}>
+            <Link to={`/description/${a._id}`}>
               <Card data={a} />
             </Link>
           );
-        })} */}
+        })} 
       </div>
     
     </Layout>

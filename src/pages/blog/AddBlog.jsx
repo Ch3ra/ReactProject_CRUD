@@ -24,10 +24,6 @@ const AddBlog = () => {
   console.log(data)
 
 
-
- 
-
-
   const nav= useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,19 +46,8 @@ const AddBlog = () => {
   };
 
 
-  // const navi =useNavigate()
-  // const[blogData,setBlogData]=useState([])
-  // const getBlog= async()=>{
-  //   const response=await axios.get(' "https://react30.onrender.com/api/user/blog"')
-  //   console.log(blogData)
-  //   if (response.status===201){
-  //    setBlogData(response.data.data)
-  //   }
-  // }
-  // useEffect(()=>{
-  //   getBlog();
+  
 
-  // },[])
 
 
   return (
@@ -128,21 +113,9 @@ const AddBlog = () => {
               </div>
             </form>
 
-            <div className="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
-              <div>
-                <a title="Buy me a pizza" href="https://www.buymeacoffee.com/Dekartmc" target="_blank" className="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
-                  <img className="object-cover object-center w-full h-full rounded-full" src="https://img.icons8.com/emoji/48/000000/pizza-emoji.png" alt="Buy me a pizza" />
-                </a>
-              </div>
-            </div>
+            
 
-            {/* {blogData.map((a)=>{
-              return(
-                <Link to='/description'>
-                  <Card blogData={a}/>
-                </Link>
-              )
-            })} */}
+       
 
           </div>
         </div>

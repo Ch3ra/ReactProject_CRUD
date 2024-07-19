@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from './../assets/logo.jpg'
 import { Link } from "react-router-dom";
+import Login from "../pages/auth/Login";
 
 const Navbar = () => {
+  const[isLogin,setIsLoggedin]=useState(false)
+
+  const token = localStorage.getItem('token');
+// console.log("object", token)
+
   return (
     <>
       <nav className="bg-white border-gray-200">
@@ -143,22 +149,32 @@ const Navbar = () => {
                     Create Blog
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/register"
-                  className="block py-2 px-3 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
-                >
-                  Register
-                </Link>
-              </li>
+
+
+
+
+
               <li>
                 <Link
                   to="/login"
                   className="block py-2 px-3 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
                 >
-                  Login
+                  {token ? 'Logout' :'Login'}
                 </Link>
               </li>
+              {/* <li>
+                <Link
+                  to="/login"
+                  className="block py-2 px-3 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                >
+                   {isLogin? 'Logout' :'Login'}
+                  
+                </Link>
+              </li> */}
+
+
+
+
             </ul>
           </div>
         </div>
